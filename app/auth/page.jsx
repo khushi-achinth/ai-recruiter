@@ -1,8 +1,20 @@
+"use client"
 import React from 'react';
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
+import {supabase} from "../../services/supabaseClient";
 
 const Login = () => {
+
+    const signInWithGoogle = async() => {
+        const {error} = await supabase.auth.signInWithOAuth({
+            provider: "google",
+        });
+        if (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
     return (
         <div className={'flex flex-col items-center justify-center h-screen'}>
             <div className={'flex flex-col items-center border rounded-2xl p-8'}>
@@ -25,7 +37,7 @@ const Login = () => {
                     />
                     <h2 className={'text-2xl font-bold text-center'}>Welcome to AI-Recruiter</h2>
                     <h4 className={'text-xl text-blue-500 text-center'}>Automate your recruitment</h4>
-                    <Button
+                    <Button onClick={signInWithGoogle}
                         className={'mt-7 w-full'}
                     >Login With Google</Button>
                 </div>
