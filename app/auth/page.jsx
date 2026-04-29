@@ -1,8 +1,9 @@
 "use client"
+
 import React from 'react';
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
-import {supabase} from "../../services/supabaseClient";
+import {supabase} from "@/services/supabaseClient";
 
 const Login = () => {
 
@@ -38,7 +39,7 @@ const Login = () => {
                     <h2 className={'text-2xl font-bold text-center'}>Welcome to AI-Recruiter</h2>
                     <h4 className={'text-xl text-blue-500 text-center'}>Automate your recruitment</h4>
                     <Button onClick={signInWithGoogle}
-                        className={'mt-7 w-full'}
+                        className={'mt-7 w-full cursor-pointer'}
                     >Login With Google</Button>
                 </div>
             </div>

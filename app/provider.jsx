@@ -13,7 +13,6 @@ const Provider = ({children}) => {
     }, []);
 
     const CreateNewUser = () => {
-        console.log("Creating new user");
         supabase.auth.getUser().then(async({data:{user}})=>{
             let {data: Users, error} = await supabase
                 .from('Users')
