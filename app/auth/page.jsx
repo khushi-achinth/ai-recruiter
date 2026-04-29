@@ -40,7 +40,7 @@ const Login = () => {
                     <h4 className={'text-xl text-blue-500 text-center'}>Automate your recruitment</h4>
                     <Button onClick={signInWithGoogle}
                         className={'mt-7 w-full cursor-pointer'}
-                    >Login With Google</Button>
+                    >Sign In With Google</Button>
                 </div>
             </div>
         </div>
