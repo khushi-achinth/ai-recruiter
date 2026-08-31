@@ -27,7 +27,7 @@ function FormContainer({ onHandleInputChange, GoToNext }) {
         if (!data) {
             setInterviewType(prev => [...prev, type])
         } else {
-            const result = interviewType.filter(item => item != type);
+            const result = interviewType.filter(item => item !== type);
             setInterviewType(result);
         }
     }
@@ -83,8 +83,8 @@ function FormContainer({ onHandleInputChange, GoToNext }) {
                     ))}
                 </div>
             </div>
-            <div className='mt-7 flex justify-end' onClick={() => GoToNext()}>
-                <Button>Generate Question <ArrowRight /></Button>
+            <div className='mt-7 flex justify-end' >
+                <Button onClick={() => GoToNext()}>Generate Question <ArrowRight /></Button>
             </div>
         </div>
     )

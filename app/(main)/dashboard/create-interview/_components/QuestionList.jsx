@@ -7,6 +7,7 @@ import QuestionListContainer from './QuestionListContainer';
 import { supabase } from '@/services/supabaseClient';
 import { useUser } from '@/app/provider';
 import { v4 as uuidv4 } from 'uuid';
+
 function QuestionList({ formData, onCreateLink }) {
 
     const [loading, setLoading] = useState(true);
@@ -19,7 +20,6 @@ function QuestionList({ formData, onCreateLink }) {
         }
     }, [formData])
 
-
     const GenerateQuestionList = async () => {
         setLoading(true);
         try {
@@ -28,7 +28,8 @@ function QuestionList({ formData, onCreateLink }) {
             })
             const content = result.data.content;
             const FINAL_CONTENT = content.replace('```json', '').replace('```', '')
-            console.log(JSON.parse(FINAL_CONTENT))
+
+            //console.log(JSON.parse(FINAL_CONTENT))
             //console.log(JSON.parse(FINAL_CONTENT)?.interviewQuestions)
             setQuestionList(JSON.parse(FINAL_CONTENT)?.interviewQuestions);
             setLoading(false);
@@ -64,8 +65,8 @@ function QuestionList({ formData, onCreateLink }) {
         console.log(userUpdate)
 
         setSaveLoading(false);
-
-        onCreateLink(interview_id)
+        console.log("ACHINTH:" + questionList.length)
+        onCreateLink(interview_id, questionList.length)
 
     }
 
@@ -83,14 +84,15 @@ function QuestionList({ formData, onCreateLink }) {
             {questionList?.length > 0 &&
                 <div>
                     <QuestionListContainer questionList={questionList} />
+                    <div className='flex justify-end mt-10'>
+                        <Button onClick={() => onFinish()} disabled={saveLoading}>
+                            {saveLoading && <Loader2 className='animate-spin' />}
+                            Create Interview Link & Finish</Button>
+                    </div>
                 </div>
             }
 
-            <div className='flex justify-end mt-10'>
-                <Button onClick={() => onFinish()} disabled={saveLoading}>
-                    {saveLoading && <Loader2 className='animate-spin' />}
-                    Create Interview Link & Finish</Button>
-            </div>
+
 
         </div>
     )

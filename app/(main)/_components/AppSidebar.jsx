@@ -26,7 +26,9 @@ function AppSidebar() {
                     alt="logo"
                     width={200}
                     height={100} className="w-37.5" />
-                <Button className="w-full cursor-pointer"><Plus/>Create New Interview</Button>
+                <Link href={'/dashboard/create-interview'}>
+                    <Button className="w-full cursor-pointer"><Plus/>Create New Interview</Button>
+                </Link>
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup />

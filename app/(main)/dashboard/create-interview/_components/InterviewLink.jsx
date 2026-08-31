@@ -6,7 +6,7 @@ import Link from 'next/link'
 import React from 'react'
 import { toast } from 'sonner'
 
-function InterviewLink({ interview_id, formData }) {
+function InterviewLink({ interview_id, numOfQuestions, formData }) {
     const url = process.env.NEXT_PUBLIC_HOST_URL + '/' + interview_id
 
     const GetInterviewUrl = () => {
@@ -24,7 +24,7 @@ function InterviewLink({ interview_id, formData }) {
                 <Image src={'/check.png'} alt='check'
                     width={200}
                     height={200}
-                    className='w-[50px] h-[50px]'
+                    className='w-12.5 h-12.5'
                 />
             </div>
             <h2 className='font-bold text-lg mt-4'>Your AI Interview is Ready!</h2>
@@ -43,12 +43,12 @@ function InterviewLink({ interview_id, formData }) {
 
                 <div className='flex gap-5'>
                     <h2 className='text-sm text-gray-500 flex gap-2 items-center'><Clock className='h-4 w-4' />{formData?.duration} </h2>
-                    <h2 className='text-sm text-gray-500 flex gap-2 items-center'><List className='h-4 w-4' /> 10 Questions </h2>
+                    <h2 className='text-sm text-gray-500 flex gap-2 items-center'><List className='h-4 w-4' /> {numOfQuestions} Questions </h2>
                     {/* <h2 className='text-sm text-gray-500 flex gap-2 items-center'><Calendar className='h-4 w-4' /> 30 Min {formData?.duration} </h2> */}
 
                 </div>
             </div>
-
+            {/*
             <div className='mt-7 bg-white p-5 rounded-lg w-full'>
                 <h2 className='font-bold'>Share Via</h2>
                 <div className='flex gap-7 mt-2 justify-around'>
@@ -58,6 +58,7 @@ function InterviewLink({ interview_id, formData }) {
 
                 </div>
             </div>
+            */}
             <div className='flex w-full gap-5 justify-between mt-6'>
                 <Link href={'/dashboard'}>
                     <Button variant={'outline'} > <ArrowLeft /> Back to Dashboard </Button>

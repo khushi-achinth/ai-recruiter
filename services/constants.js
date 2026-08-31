@@ -77,7 +77,7 @@ Ensure the questions match the tone and structure of a real-life {{type}} interv
 format: interviewQuestions=[
 {
  question:'',
- type:'Technical/Behavioral/Experince/Problem Solving/Leaseship'
+ type:'',
 },{
 ...
 }]
@@ -87,10 +87,10 @@ format: interviewQuestions=[
 
 
 export const FEEDBACK_PROMPT = `{{conversation}}
-Depends on this Interview Conversation between assitant and user, 
+Depends on this Interview Conversation between assistant and user, 
 Give me feedback for user interview. Give me rating out of 10 for technical Skills, 
-Communication, Problem Solving, Experince. Also give me summery in 3 lines 
-about the interview and one line to let me know whether is recommanded 
+Communication, Problem Solving, Experience. Also give me summery in 3 lines 
+about the interview and one line to let me know whether is recommended 
 for hire or not with msg. Give me response in JSON format
 {
     feedback:{
@@ -98,7 +98,7 @@ for hire or not with msg. Give me response in JSON format
             technicalSkills:<>,
             communication:<>,
             problemSolving:<>,
-            experince:<>,
+            experience:<>,
             totalRating:<>
         },
         summery:<in 3 Line>,
