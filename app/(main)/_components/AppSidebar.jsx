@@ -11,8 +11,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {Plus} from "lucide-react"
-import {SidebarMenu, SidebarMenuItem} from "../../../components/ui/sidebar";
-import {SideBarOptions} from "../../../services/constants";
+import {SidebarMenu, SidebarMenuItem} from "@/components/ui/sidebar";
+import {SideBarOptions} from "@/services/constants";
 import {usePathname} from "next/navigation";
 
 function AppSidebar() {

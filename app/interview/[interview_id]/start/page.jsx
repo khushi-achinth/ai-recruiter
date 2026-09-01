@@ -31,7 +31,7 @@ function StartInterview() {
             questionList = item?.question + "," + questionList
         ));
         const assistantOptions = {
-            name: "AI Recruiter",
+            name: "AI-Recruiter",
             firstMessage: "Hi " + interviewInfo?.userName + ", how are you? Ready for your interview on " + interviewInfo?.interviewData?.jobPosition,
             transcriber: {
                 provider: "deepgram",
@@ -61,8 +61,8 @@ Do not provide the correct answer or long feedback to the candidate's answer to 
 Keep the conversation natural and engaging—use casual phrases like "Alright, next up..." or "Let’s tackle a tricky one!"
 After all the questions, wrap up the interview smoothly. Example:
 "That was great! You handled some tough questions well. Keep sharpening your skills!"
-End on a positive note:
-"Thanks for chatting! Hope to see you crushing projects soon!"
+End on a positive note: "Thanks for chatting! Hope to see you crushing projects soon!"
+Also, you must mention at the end of the interview that the candidate needs to click the End Call button to end the interview.
 Key Guidelines:
 ✅ Be friendly, engaging, and witty
 ✅ Keep responses short and natural, like a real conversation
@@ -147,7 +147,7 @@ Key Guidelines:
     }, []);
 
     const GenerateFeedback = async () => {
-        /*
+
         setLoading(true);
         console.log("conversation", conversation)
 
@@ -162,23 +162,24 @@ Key Guidelines:
         const Content = result.data.content;
         const FINAL_CONTENT = Content.replace('```json', '').replace('```', '')
         console.log(FINAL_CONTENT);
+        const feedbackJSON = JSON.parse(FINAL_CONTENT);
         // Save to Database
 
         const { data, error } = await supabase
-            .from('interview-feedback')
+            .from('InterviewFeedback')
             .insert([
                 {
                     userName: interviewInfo?.userName,
                     userEmail: interviewInfo?.userEmail,
                     interview_id: interview_id,
-                    feedback: JSON.parse(FINAL_CONTENT),
-                    recommended: false
+                    feedback: feedbackJSON.feedback,
+                    recommended: feedbackJSON.feedback.recommended
                 },
             ])
             .select();
         console.log(data);
         router.replace('/interview/' + interview_id + "/completed");
-        setLoading(false);*/
+        setLoading(false);
     }
 
     return (
@@ -201,7 +202,7 @@ Key Guidelines:
                             className='w-15 h-15 rounded-full object-cover'
                         />
                     </div>
-                    <h2>AI Recruiter</h2>
+                    <h2>AI-Recruiter</h2>
                 </div>
                 <div className='bg-white h-100 rounded-lg border flex flex-col gap-3 items-center justify-center'>
                     <div className='relative'>

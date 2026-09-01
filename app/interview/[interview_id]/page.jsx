@@ -95,7 +95,7 @@ function Interview() {
                     <div>
                         <h2 className='font-bold'>Before you begin</h2>
                         <ul className=''>
-                            <li className='text-sm text-primary'>- Test your camera and microphone</li>
+                            <li className='text-sm text-primary'>- Test your speakers and microphone</li>
                             <li className='text-sm text-primary'>- Ensure you have a stable internet connection</li>
                             <li className='text-sm text-primary'>- Find a quiet place for the interview</li>
                         </ul>

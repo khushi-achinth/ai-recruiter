@@ -79,7 +79,7 @@ export default function Home() {
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Streamline Your Hiring Process</h2>
                                 <p className="mx-auto max-w-175 text-gray-500 md:text-xl/relaxed">
-                                    AI Recruiter helps you save time and find better candidates with our advanced AI interview technology.
+                                    AI-Recruiter helps you save time and find better candidates with our advanced AI interview technology.
                                 </p>
                             </div>
                         </div>
@@ -114,7 +114,7 @@ export default function Home() {
                     <div className="container px-4 md:px-6">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">
-                                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">How AI Recruiter Works</h2>
+                                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">How AI-Recruiter Works</h2>
                                 <p className="mx-auto max-w-175 text-gray-500 md:text-xl/relaxed">
                                     Three simple steps to transform your recruitment process
                                 </p>
@@ -161,7 +161,7 @@ export default function Home() {
                                     Ready to Transform Your Hiring Process?
                                 </h2>
                                 <p className="mx-auto max-w-175 text-gray-500 md:text-xl/relaxed">
-                                    Join hundreds of companies already using AI Recruiter to find the best talent.
+                                    Join hundreds of companies already using AI-Recruiter to find the best talent.
                                 </p>
                             </div>
                             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -181,7 +181,7 @@ export default function Home() {
                 <div className="container flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-12">
                     <div className="flex items-center gap-2">
                         <Mic className="h-6 w-6 text-primary" />
-                        <span className="text-xl font-bold">AI Recruiter</span>
+                        <span className="text-xl font-bold">AI-Recruiter</span>
                     </div>
                     <nav className="flex flex-wrap gap-4 md:gap-6">
                         <Link href="#" className="text-sm hover:underline">
@@ -194,7 +194,7 @@ export default function Home() {
                             Contact
                         </Link>
                     </nav>
-                    <div className="text-sm text-gray-500">© 2026 AI Recruiter. All rights reserved.</div>
+                    <div className="text-sm text-gray-500">© 2026 AI-Recruiter. All rights reserved.</div>
                 </div>
             </footer>
 

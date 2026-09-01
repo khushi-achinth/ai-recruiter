@@ -1,4 +1,4 @@
-import { BriefcaseBusinessIcon, Calendar, Code2Icon, Component, LayoutDashboard, List, Puzzle, Settings, User2Icon, WalletCards, LogOut } from "lucide-react";
+import { BriefcaseBusinessIcon, Calendar, Code2Icon, Component, LayoutDashboard, List, Puzzle, User2Icon, WalletCards, LogOut } from "lucide-react";
 
 export const SideBarOptions = [
     {
@@ -7,24 +7,19 @@ export const SideBarOptions = [
         path: '/dashboard'
     },
     {
-        name: 'Scheduled Interview',
+        name: 'Scheduled Interviews',
         icon: Calendar,
-        path: '/scheduled-interview'
+        path: '/scheduled-interviews'
     },
     {
-        name: 'All Interview',
+        name: 'All Interviews',
         icon: List,
-        path: '/all-interview'
+        path: '/all-interviews'
     },
     {
         name: 'Billing',
         icon: WalletCards,
         path: '/billing'
-    },
-    {
-        name: 'Settings',
-        icon: Settings,
-        path: '/settings'
     },
     {
         name: 'Sign Out',
@@ -92,11 +87,11 @@ format: interviewQuestions=[
 
 
 export const FEEDBACK_PROMPT = `{{conversation}}
-Depends on this Interview Conversation between assistant and user, 
-Give me feedback for user interview. Give me rating out of 10 for technical Skills, 
-Communication, Problem Solving, Experience. Also give me summery in 3 lines 
-about the interview and one line to let me know whether is recommended 
-for hire or not with msg. Give me response in JSON format
+Depending on this interview conversation between assistant and candidate, 
+Give me feedback of the user interview. Give me rating out of 10 for technical skills, 
+communication, problem solving and experience. Also give me summery in about 5 lines 
+about the interview and one line to let me know whether candidate is recommended 
+for hire or not with message. Give me response in JSON format
 {
     feedback:{
         rating:{
@@ -106,9 +101,9 @@ for hire or not with msg. Give me response in JSON format
             experience:<>,
             totalRating:<>
         },
-        summery:<in 3 Line>,
-        recommendation:true|false, //true means YES and False Means No
-        recommendationMsg:<'one Line Msg'>
+        summary:<in about 5 lines>,
+        recommended:true|false, //true means YES and False Means No
+        recommendationMsg:<'one line message'>
     }
 
 }

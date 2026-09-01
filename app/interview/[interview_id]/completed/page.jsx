@@ -10,12 +10,6 @@ import { toast } from 'sonner';
 const InterviewComplete = () => {
 
     const router = useRouter();
-    useEffect(() => {
-        toast('You will redirecting to Website...')
-        setTimeout(() => {
-            router.replace('/')
-        }, 3000)
-    }, [])
 
     return (
 
@@ -25,7 +19,7 @@ const InterviewComplete = () => {
 
             {/* Main Content */}
 
-            <main className="flex-grow flex flex-col items-center justify-center space-y-3 py-6">
+            <main className="grow flex flex-col items-center justify-center space-y-3 py-6">
 
                 {/* Success Icon */}
 
@@ -71,9 +65,9 @@ const InterviewComplete = () => {
 
                 {/* Subheading */}
 
-                <p className="text-lg text-gray-400 text-center">
+                <p className="text-lg text-gray-600 text-center">
 
-                    Thank you for participating in the AI-driven interview with Alcruiter
+                    Thank you for participating in the AI-driven interview with AI-Recruiter
 
                 </p>
 
@@ -101,7 +95,7 @@ const InterviewComplete = () => {
 
                             width: '800px',
 
-                            height: '280px',
+                            height: '400px',
 
                         }}
 
@@ -126,13 +120,13 @@ const InterviewComplete = () => {
 
                     <h2 className="text-2xl font-semibold text-center">What's Next?</h2>
 
-                    <p className="text-gray-400 text-center">
+                    <p className="text-gray-600 text-center">
 
                         The recruiter will review your interview responses and will contact you soon regarding the next steps.
 
                     </p>
 
-                    <p className="text-gray-400 text-sm text-center">
+                    <p className="text-gray-600 text-sm text-center">
 
                         <svg
 
@@ -200,7 +194,7 @@ const InterviewComplete = () => {
 
             <footer className="bg-midnightLighter text-gray-400 text-center py-4">
 
-                <p>&copy; 2025 Alcruiter. All rights reserved.</p>
+                <p>&copy; 2026 AI-Recruiter. All rights reserved.</p>
 
             </footer>
 

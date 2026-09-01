@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AI Recruiter",
+  title: "AI-Recruiter",
   description: "Automate your recruitment",
 };
 
