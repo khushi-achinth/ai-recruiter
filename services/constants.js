@@ -1,4 +1,4 @@
-import { BriefcaseBusinessIcon, Calendar, Code2Icon, Component, LayoutDashboard, List, Puzzle, Settings, User2Icon, WalletCards } from "lucide-react";
+import { BriefcaseBusinessIcon, Calendar, Code2Icon, Component, LayoutDashboard, List, Puzzle, Settings, User2Icon, WalletCards, LogOut } from "lucide-react";
 
 export const SideBarOptions = [
     {
@@ -26,6 +26,11 @@ export const SideBarOptions = [
         icon: Settings,
         path: '/settings'
     },
+    {
+        name: 'Sign Out',
+        icon: LogOut,
+        path: '/sign-out'
+    }
 
 ]
 

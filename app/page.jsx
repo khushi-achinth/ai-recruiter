@@ -4,18 +4,23 @@ import { BarChart3, Clock, Mic, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useUser } from "./provider";
-import {useEffect} from "react";
-import {redirect} from "next/navigation";
+import { useEffect } from "react";
+import {redirect, useSearchParams} from "next/navigation";
 
 export default function Home() {
     const { user } = useUser();
+    const searchParams = useSearchParams();
+    const reloadFlag = searchParams.get('signOut');
 
     useEffect(() => {
-        console.log(user?.email)
+        if (reloadFlag === 'true') {
+            // Perform a hard reload of the current window URL
+            window.location.href = window.location.pathname;
+        }
         if(user) {
             redirect('/dashboard');
         }
-    }, [])
+    }, [reloadFlag, user]);
 
     return (
         <div>
