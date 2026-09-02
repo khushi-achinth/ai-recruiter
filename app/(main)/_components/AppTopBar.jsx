@@ -5,7 +5,7 @@ import {useUser} from "@/app/provider";
 import Image from 'next/image';
 import Link from 'next/link'
 
-const WelcomeContainer = () => {
+const AppTopBar = () => {
     const {user} = useUser();
 
     return (
@@ -24,4 +24,4 @@ const WelcomeContainer = () => {
     )
 };
 
-export default WelcomeContainer;
+export default AppTopBar;

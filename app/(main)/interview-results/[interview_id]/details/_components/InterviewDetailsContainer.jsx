@@ -25,7 +25,7 @@ function InterviewDetailsContainer({interviewDetails}) {
                                 key={index}
                                 className='flex text-sm font-bold items-center gap-2'
                             >
-                                <ClipboardType className='h-4 w-4' />
+                                <ClipboardType className='h-4 w-4'/>
                                 {type}
                             </h2>
                         ))}

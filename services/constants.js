@@ -6,6 +6,7 @@ import {
     List,
     LogOut,
     NotebookPen,
+    Phone,
     Puzzle,
     User2Icon,
     WalletCards
@@ -16,6 +17,11 @@ export const SideBarOptions = [
         name: 'Dashboard',
         icon: LayoutDashboard,
         path: '/dashboard'
+    },
+    {
+        name: 'Create Interview',
+        icon: Phone,
+        path: '/create-interview'
     },
     {
         name: 'Interview Results',
@@ -90,9 +96,9 @@ The goal is to create a structured, relevant, and time-optimized interview plan 
 export const FEEDBACK_PROMPT = `{{conversation}}
 Depending on this interview conversation between assistant and candidate, 
 Give me feedback of the user interview. Give me rating out of 10 for technical skills, 
-communication, problem solving and experience. Also give me summery in about 5 lines 
+communication, problem solving and experience. Also calculate the total rating out of 10 based on the previous 4 ratings giving higher weightage to technical skills and problem solving. Also give me summery in about 5 lines 
 about the interview and one line to let me know whether candidate is recommended 
-for hire or not with message. The total rating must be out of 10 based on overall performance of the candidate in the interview.
+for hire or not with message.
 Give me response in JSON format
 {
     feedback:{

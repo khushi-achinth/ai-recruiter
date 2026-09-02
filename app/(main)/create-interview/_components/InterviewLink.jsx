@@ -1,8 +1,7 @@
 import {Button} from '@/components/ui/button'
 import {Input} from '@/components/ui/input'
-import {ArrowLeft, Clock, Copy, List} from 'lucide-react'
+import {Clock, Copy, List} from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import {toast} from 'sonner'
 
@@ -44,11 +43,6 @@ function InterviewLink({interview_id, numOfQuestions, formData}) {
                     <h2 className='text-sm text-gray-500 flex gap-2 items-center'><List
                         className='h-4 w-4'/> {numOfQuestions} Questions </h2>
                 </div>
-            </div>
-            <div className='flex w-full gap-5 justify-between mt-6'>
-                <Link href={'/dashboard'}>
-                    <Button variant={'outline'}> <ArrowLeft/> Back to Dashboard </Button>
-                </Link>
             </div>
         </div>
     )

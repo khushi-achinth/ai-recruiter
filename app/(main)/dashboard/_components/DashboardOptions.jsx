@@ -5,7 +5,7 @@ import React from 'react'
 function DashboardOptions() {
     return (
         <div className='grid grid-cols-3 gap-5'>
-            <Link href={'/dashboard/create-interview'}
+            <Link href={'/create-interview'}
                   className='bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-2 cursor-pointer'
             >
                 <Phone className='p-3 text-primary bg-blue-50 rounded-lg h-12 w-12'/>

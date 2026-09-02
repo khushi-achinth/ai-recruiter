@@ -88,7 +88,7 @@ Key Guidelines:
         };
         vapi.on("message", handleMessage);
         vapi.on("call-start", () => {
-            toast.info('Call connected...')
+            toast.info('Call connected...', {position: "top-center"})
         });
         vapi.on("speech-start", () => {
             setActiveUser(false);
@@ -97,7 +97,7 @@ Key Guidelines:
             setActiveUser(true);
         });
         vapi.on("call-end", () => {
-            toast.info('Interview ended. Please wait...');
+            toast.info('Interview ended. Please wait...', {position: "top-center"});
             GenerateFeedback();
         });
 
