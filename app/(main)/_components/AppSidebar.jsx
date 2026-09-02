@@ -11,8 +11,6 @@ import {
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import Link from "next/link";
-import {Button} from "@/components/ui/button";
-import {Plus} from "lucide-react"
 import {SideBarOptions} from "@/services/constants";
 import {usePathname} from "next/navigation";
 
@@ -27,9 +25,6 @@ function AppSidebar() {
                        alt="logo"
                        width={200}
                        height={100} className="w-37.5"/>
-                <Link href={'/dashboard/create-interview'}>
-                    <Button className="w-full cursor-pointer"><Plus/>Create New Interview</Button>
-                </Link>
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup/>
@@ -44,6 +39,7 @@ function AppSidebar() {
                                 </Link>
                             </SidebarMenuItem>
                         ))}
+                        
                     </SidebarMenu>
                 </SidebarContent>
                 <SidebarGroup/>

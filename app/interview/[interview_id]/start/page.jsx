@@ -20,7 +20,6 @@ function StartInterview() {
     const {interview_id} = useParams();
     const router = useRouter();
     const [loading, setLoading] = useState();
-    const [callEnd, setCallEnd] = useState(false);
 
     useEffect(() => {
         interviewInfo && startCall();
@@ -73,13 +72,10 @@ Key Guidelines:
             },
         };
         vapi.start(assistantOptions)
-        setCallEnd(false);
-
     }
 
     const stopInterview = async () => {
         await vapi.stop();
-        setCallEnd(true);
         GenerateFeedback();
     }
 
@@ -143,7 +139,6 @@ Key Guidelines:
             ])
             .select();
         router.replace('/interview/' + interview_id + "/completed");
-        setLoading(false);
     }
 
     return (
