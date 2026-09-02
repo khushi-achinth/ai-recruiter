@@ -45,7 +45,7 @@ function CreateInterview() {
     return (
         <div>
             <div className='my-3 mx-1 font-bold text-2xl'>
-                <h2 className='font-bold text-2xl'>Create New Interview</h2>
+                <h2 className='font-bold text-2xl'>Create Interview</h2>
             </div>
             <Progress value={step * 33.33} className='my-5'/>
             {step === 1 ? <FormContainer

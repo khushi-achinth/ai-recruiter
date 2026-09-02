@@ -11,20 +11,20 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 
-function AlertConfirmation({children, stopInterview}) {
+function AlertConfirmation({children, handleContinue, title, text}) {
     return (
         <AlertDialog>
             <AlertDialogTrigger>{children}</AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>End Interview</AlertDialogTitle>
+                    <AlertDialogTitle>{title}</AlertDialogTitle>
                     <AlertDialogDescription>
-                        Are you sure? This action cannot be undone. Your interview will end.
+                        {text}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={() => stopInterview()}>Continue</AlertDialogAction>
+                    <AlertDialogAction onClick={() => handleContinue()}>Continue</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

@@ -3,7 +3,7 @@
 import {useUser} from '@/app/provider';
 import {Button} from '@/components/ui/button';
 import {supabase} from '@/services/supabaseClient';
-import {Video} from 'lucide-react';
+import {Phone} from 'lucide-react';
 import React, {useEffect, useState} from 'react'
 import InterviewCard from '@/app/(main)/_components/InterviewCard';
 import Link from 'next/link';
@@ -31,13 +31,13 @@ function LatestInterviewsList() {
 
     return (
         <div className='my-5'>
-            <h2 className='font-bold text-2xl'>Latest Interviews Created</h2>
+            <h2 className='font-bold text-2xl'>Latest Interviews</h2>
             {!loading && interviewList?.length === 0 &&
                 <div className='p-5 flex flex-col gap-3 items-center bg-white rounded-xl mt-5 '>
-                    <Video className='h-10 w-10 text-primary'/>
+                    <Phone className='h-10 w-10 text-primary'/>
                     <h2>You don't have any interview created!</h2>
-                    <Link href={'/dashboard/create-interview'}>
-                        <Button>+ Create New Interview</Button>
+                    <Link href={'/create-interview'}>
+                        <Button>Create Interview</Button>
                     </Link>
                 </div>}
             {!loading && interviewList &&

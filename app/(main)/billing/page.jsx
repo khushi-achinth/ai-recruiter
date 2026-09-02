@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import {Card, CardContent, CardDescription, CardHeader, CardTitle,} from "@/components/ui/card"
+import {Card, CardContent, CardHeader, CardTitle,} from "@/components/ui/card"
 import {Phone} from "lucide-react"
 import {useUser} from '@/app/provider'
 import PayButton from './_components/PayButton'
@@ -10,11 +10,10 @@ function Billing() {
     const {user} = useUser();
 
     return (
-        <main className="flex-1 p-4 md:p-6">
+        <div className="flex-1 p-4 md:p-6">
             <div className="mx-auto grid max-w-6xl gap-6">
                 <div>
                     <h1 className="text-2xl font-semibold tracking-tight">Billing</h1>
-                    <p className="text-muted-foreground">Manage your payments and credits</p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     <Card className="md:col-span-2 lg:col-span-1">
@@ -39,7 +38,6 @@ function Billing() {
                     <Card className="md:col-span-2">
                         <CardHeader>
                             <CardTitle>Purchase Credits</CardTitle>
-                            <CardDescription>Add more interview credits to your account</CardDescription>
                         </CardHeader>
                         <CardContent>
                             <div className="grid gap-4 md:grid-cols-3">
@@ -80,9 +78,8 @@ function Billing() {
                         </CardContent>
                     </Card>
                 </div>
-
             </div>
-        </main>
+        </div>
     )
 }
 

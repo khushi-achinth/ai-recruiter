@@ -4,10 +4,10 @@ import {
     Component,
     LayoutDashboard,
     List,
-    LogOut,
     NotebookPen,
     Phone,
     Puzzle,
+    User,
     User2Icon,
     WalletCards
 } from "lucide-react";
@@ -39,9 +39,9 @@ export const SideBarOptions = [
         path: '/billing'
     },
     {
-        name: 'Sign Out',
-        icon: LogOut,
-        path: '/sign-out'
+        name: 'User Profile',
+        icon: User,
+        path: '/user-profile'
     }
 
 ]

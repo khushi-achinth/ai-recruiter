@@ -5,7 +5,7 @@ import {Loader2Icon, PhoneOff, Timer} from 'lucide-react';
 import Image from 'next/image';
 import React, {useContext, useEffect, useMemo, useState} from 'react'
 import Vapi from "@vapi-ai/web";
-import AlertConfirmation from './_components/AlertConfirmation';
+import AlertConfirmation from '@/app/_components/AlertConfirmation';
 import {toast} from 'sonner';
 import TimerComponent from './_components/TimerComponent';
 import axios from 'axios';
@@ -173,9 +173,10 @@ Key Guidelines:
                 </div>
             </div>
             <div className='flex items-center gap-5 justify-center mt-7'>
-                <AlertConfirmation stopInterview={() => {
-                    stopInterview()
-                }}>
+                <AlertConfirmation title='End Interview' text='Are you sure you want to end the interview?'
+                                   handleContinue={() => {
+                                       stopInterview()
+                                   }}>
                     {!loading ? <PhoneOff className='h-15 w-15 p-4 bg-red-500 text-white rounded-2xl cursor-pointer'
                     /> : <Loader2Icon className='animate-spin'/>}
                 </AlertConfirmation>
