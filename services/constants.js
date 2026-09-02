@@ -1,4 +1,15 @@
-import { BriefcaseBusinessIcon, Calendar, Code2Icon, Component, LayoutDashboard, List, Puzzle, User2Icon, WalletCards, LogOut } from "lucide-react";
+import {
+    BriefcaseBusinessIcon,
+    Calendar,
+    Code2Icon,
+    Component,
+    LayoutDashboard,
+    List,
+    LogOut,
+    Puzzle,
+    User2Icon,
+    WalletCards
+} from "lucide-react";
 
 export const SideBarOptions = [
     {
@@ -54,26 +65,18 @@ export const InterviewType = [
 
 export const QUESTIONS_PROMPT = `You are an expert technical interviewer.
 Based on the following inputs, generate a well-structured list of high-quality interview questions:
-
 Job Title: {{jobTitle}}
-
 Job Description:{{jobDescription}}
-
 Interview Duration: {{duration}}
-
 Interview Type: {{type}}
 
-📝 Your task:
-
+Your task:
 Analyze the job description to identify key responsibilities, required skills, and expected experience.
-
-Generate a list of interview questions depends on interview duration
-
+Generate a list of interview questions depends on interview duration.
 Adjust the number and depth of questions to match the interview duration.
-
 Ensure the questions match the tone and structure of a real-life {{type}} interview.
 
-🧩 Format your response in JSON format with array list of questions.
+Format your response in JSON format with array list of questions.
 format: interviewQuestions=[
 {
  question:'',
@@ -82,9 +85,7 @@ format: interviewQuestions=[
 ...
 }]
 
-🎯 The goal is to create a structured, relevant, and time-optimized interview plan for a {{jobTitle}} role.`
-
-
+The goal is to create a structured, relevant, and time-optimized interview plan for a {{jobTitle}} role.`
 
 export const FEEDBACK_PROMPT = `{{conversation}}
 Depending on this interview conversation between assistant and candidate, 
@@ -105,7 +106,4 @@ for hire or not with message. Give me response in JSON format
         recommended:true|false, //true means YES and False Means No
         recommendationMsg:<'one line message'>
     }
-
-}
-
-`
+}`

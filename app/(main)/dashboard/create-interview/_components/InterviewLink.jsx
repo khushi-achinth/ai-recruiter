@@ -1,13 +1,13 @@
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { ArrowLeft, Clock, Copy, List, Mail, Plus } from 'lucide-react'
+import {Button} from '@/components/ui/button'
+import {Input} from '@/components/ui/input'
+import {ArrowLeft, Clock, Copy, List, Plus} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { toast } from 'sonner'
+import {toast} from 'sonner'
 
-function InterviewLink({ interview_id, numOfQuestions, formData }) {
-    const url = process.env.NEXT_PUBLIC_HOST_URL + 'interview/' + interview_id
+function InterviewLink({interview_id, numOfQuestions, formData}) {
+    const url = process.env.NEXT_PUBLIC_HOST_URL + '/interview/' + interview_id
 
     const GetInterviewUrl = () => {
         return url;
@@ -15,16 +15,16 @@ function InterviewLink({ interview_id, numOfQuestions, formData }) {
 
     const onCopyLink = async () => {
         await navigator.clipboard.writeText(url);
-        toast('Link Copied')
+        toast.info('Interview link copied', {position: "top-center"})
     }
 
     return (
         <div className='flex items-center justify-center flex-col mt-10'>
             <div className=''>
                 <Image src={'/check.png'} alt='check'
-                    width={200}
-                    height={200}
-                    className='w-12.5 h-12.5'
+                       width={200}
+                       height={200}
+                       className='w-12.5 h-12.5'
                 />
             </div>
             <h2 className='font-bold text-lg mt-4'>Your AI Interview is Ready!</h2>
@@ -36,14 +36,16 @@ function InterviewLink({ interview_id, numOfQuestions, formData }) {
                     <h2 className='p-1 px-2 text-primary bg-blue-50 rounded-4xl'>Valid for 30 Days</h2>
                 </div>
                 <div className='mt-3 flex gap-3 items-center'>
-                    <Input defaultValue={GetInterviewUrl()} disabled={true} />
-                    <Button onClick={() => onCopyLink()}> <Copy /> Copy Link </Button>
+                    <Input defaultValue={GetInterviewUrl()} disabled={true}/>
+                    <Button onClick={() => onCopyLink()}> <Copy/> Copy Link </Button>
                 </div>
-                <hr className='my-5' />
+                <hr className='my-5'/>
 
                 <div className='flex gap-5'>
-                    <h2 className='text-sm text-gray-500 flex gap-2 items-center'><Clock className='h-4 w-4' />{formData?.duration} </h2>
-                    <h2 className='text-sm text-gray-500 flex gap-2 items-center'><List className='h-4 w-4' /> {numOfQuestions} Questions </h2>
+                    <h2 className='text-sm text-gray-500 flex gap-2 items-center'><Clock
+                        className='h-4 w-4'/>{formData?.duration} </h2>
+                    <h2 className='text-sm text-gray-500 flex gap-2 items-center'><List
+                        className='h-4 w-4'/> {numOfQuestions} Questions </h2>
                     {/* <h2 className='text-sm text-gray-500 flex gap-2 items-center'><Calendar className='h-4 w-4' /> 30 Min {formData?.duration} </h2> */}
 
                 </div>
@@ -61,10 +63,10 @@ function InterviewLink({ interview_id, numOfQuestions, formData }) {
             */}
             <div className='flex w-full gap-5 justify-between mt-6'>
                 <Link href={'/dashboard'}>
-                    <Button variant={'outline'} > <ArrowLeft /> Back to Dashboard </Button>
+                    <Button variant={'outline'}> <ArrowLeft/> Back to Dashboard </Button>
                 </Link>
                 <Link href={'/dashboard/create-interview'}>
-                    <Button> <Plus /> Create New Interview </Button>
+                    <Button> <Plus/> Create New Interview </Button>
                 </Link>
 
             </div>

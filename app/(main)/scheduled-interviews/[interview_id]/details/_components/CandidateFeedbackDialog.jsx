@@ -7,18 +7,17 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { Button } from '@/components/ui/button'
-import { Progress } from '@/components/ui/progress'
+import {Button} from '@/components/ui/button'
+import {Progress} from '@/components/ui/progress'
 
-function CandidateFeedbackDialog({ candidate }) {
+function CandidateFeedbackDialog({candidate}) {
     const feedback = candidate?.feedback?.feedback;
-    console.log(feedback)
     return (
-        <Dialog >
+        <Dialog>
             <DialogTrigger asChild>
                 <Button variant="outline" className="text-primary">View Report</Button>
             </DialogTrigger>
-            <DialogContent >
+            <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Feedback</DialogTitle>
                     <DialogDescription asChild>
@@ -39,20 +38,24 @@ function CandidateFeedbackDialog({ candidate }) {
                                 <h2 className='font-bold'>Skills Assesment</h2>
                                 <div className='mt-3 grid grid-cols-2 gap-5'>
                                     <div>
-                                        <h2 className='flex justify-between'>Technical Skills <span>{feedback?.rating?.technicalSkills}/10</span></h2>
-                                        <Progress value={feedback?.rating?.technicalSkills * 10} className='mt-1' />
+                                        <h2 className='flex justify-between'>Technical
+                                            Skills <span>{feedback?.rating?.technicalSkills}/10</span></h2>
+                                        <Progress value={feedback?.rating?.technicalSkills * 10} className='mt-1'/>
                                     </div>
                                     <div>
-                                        <h2 className='flex justify-between'>Communication<span>{feedback?.rating?.communication}/10</span></h2>
-                                        <Progress value={feedback?.rating?.communication * 10} className='mt-1' />
+                                        <h2 className='flex justify-between'>Communication<span>{feedback?.rating?.communication}/10</span>
+                                        </h2>
+                                        <Progress value={feedback?.rating?.communication * 10} className='mt-1'/>
                                     </div>
                                     <div>
-                                        <h2 className='flex justify-between'>Problem Solving <span>{feedback?.rating?.problemSolving}/10</span></h2>
-                                        <Progress value={feedback?.rating?.problemSolving * 10} className='mt-1' />
+                                        <h2 className='flex justify-between'>Problem
+                                            Solving <span>{feedback?.rating?.problemSolving}/10</span></h2>
+                                        <Progress value={feedback?.rating?.problemSolving * 10} className='mt-1'/>
                                     </div>
                                     <div>
-                                        <h2 className='flex justify-between'>Experince <span>{feedback?.rating?.experience}/10</span></h2>
-                                        <Progress value={feedback?.rating?.experience * 10} className='mt-1' />
+                                        <h2 className='flex justify-between'>Experince <span>{feedback?.rating?.experience}/10</span>
+                                        </h2>
+                                        <Progress value={feedback?.rating?.experience * 10} className='mt-1'/>
                                     </div>
                                 </div>
                             </div>
@@ -64,20 +67,22 @@ function CandidateFeedbackDialog({ candidate }) {
                                     ))}
                                 </div>
                             </div>
-
-                            <div className={`p-5 mt-10 flex items-center justify-between rounded-md ${feedback?.recommendation == false ? 'bg-red-100' : 'bg-green-100'} `}>
+                            <div
+                                className={`p-5 mt-10 flex items-center justify-between rounded-md ${feedback?.recommendation === false ? 'bg-red-100' : 'bg-green-100'} `}>
                                 <div>
-                                    <h2 className={`font-bold ${feedback?.recommendation == false ? 'text-red-700' : 'text-green-700'}`}>Recommendation Msg:</h2>
-                                    <p className={`${feedback?.recommendation == false ? 'text-red-500' : 'text-green-500'}`}>{feedback?.recommendationMsg}</p>
+                                    <h2 className={`font-bold ${feedback?.recommendation === false ? 'text-red-700' : 'text-green-700'}`}>Recommendation
+                                        Msg:</h2>
+                                    <p className={`${feedback?.recommendation === false ? 'text-red-500' : 'text-green-500'}`}>{feedback?.recommendationMsg}</p>
                                 </div>
-                                <Button className={`${feedback?.recommendation == false ? 'bg-red-700' : 'bg-green-700'} `} >Send Msg</Button>
+                                <Button
+                                    className={`${feedback?.recommendation === false ? 'bg-red-700' : 'bg-green-700'} `}>Send
+                                    Msg</Button>
                             </div>
                         </div>
                     </DialogDescription>
                 </DialogHeader>
             </DialogContent>
         </Dialog>
-
     )
 }
 

@@ -1,13 +1,13 @@
 "use client"
-import { useUser } from '@/app/provider';
-import { Button } from '@/components/ui/button';
-import { supabase } from '@/services/supabaseClient'
-import { Video } from 'lucide-react';
-import React, { useEffect, useState } from 'react'
+import {useUser} from '@/app/provider';
+import {Button} from '@/components/ui/button';
+import {supabase} from '@/services/supabaseClient'
+import {Video} from 'lucide-react';
+import React, {useEffect, useState} from 'react'
 import InterviewCard from '../dashboard/_components/InterviewCard';
 
 function ScheduledInterviews() {
-    const { user } = useUser();
+    const {user} = useUser();
     const [interviewList, setInterviewList] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -19,9 +19,8 @@ function ScheduledInterviews() {
         const result = await supabase.from('Interviews')
             .select('jobPosition,duration,interview_id,InterviewFeedback(userEmail)')
             .eq('userEmail', user?.email)
-            .order('id', { ascending: false })
+            .order('id', {ascending: false})
 
-        console.log(result);
         setInterviewList(result.data);
         setLoading(false);
     }
@@ -30,9 +29,9 @@ function ScheduledInterviews() {
         <div className=' mt-5'>
             <h2 className='font-bold text-2xl'>Interview List with Candidate Feedback</h2>
             {!loading &&
-            interviewList?.length === 0 &&
+                interviewList?.length === 0 &&
                 <div className='p-5 flex flex-col gap-3 items-center bg-white rounded-xl mt-5 '>
-                    <Video className='h-10 w-10 text-primary' />
+                    <Video className='h-10 w-10 text-primary'/>
                     <h2>You don't have any interview created!</h2>
                     <Button>+ Create New Interview</Button>
                 </div>}
@@ -40,7 +39,7 @@ function ScheduledInterviews() {
                 <div className='grid grid-cols-2 mt-5 xl:grid-cols-3 gap-5'>
                     {interviewList && interviewList?.map((interview, index) => (
                         <InterviewCard interview={interview} key={index}
-                            viewDetail={true}
+                                       viewDetail={true}
                         />
                     ))}
                 </div>

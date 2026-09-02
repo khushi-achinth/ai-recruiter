@@ -13,13 +13,13 @@ const Provider = ({children}) => {
     }, []);
 
     const CreateNewUser = () => {
-        supabase.auth.getUser().then(async({data:{user}})=>{
-            let {data: Users, error} = await supabase
+        supabase.auth.getUser().then(async ({data: {user}}) => {
+            let {data: users, error} = await supabase
                 .from('Users')
                 .select('*')
                 .eq('email', user?.email);
 
-            if(Users?.length === 0){
+            if (users?.length === 0 && user?.email) {
                 const {data, error} = await supabase
                     .from('Users')
                     .insert([
@@ -27,12 +27,13 @@ const Provider = ({children}) => {
                             email: user?.email,
                             name: user?.user_metadata?.name,
                             picture: user?.user_metadata?.picture,
+                            credits: process.env.NEXT_PUBLIC_FREE_CREDITS
                         },
                     ]);
                 setUser(data)
                 return;
             }
-            setUser(Users[0]);
+            setUser(users[0]);
         })
     }
 

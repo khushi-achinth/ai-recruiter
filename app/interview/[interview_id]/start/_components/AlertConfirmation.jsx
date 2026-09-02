@@ -10,15 +10,16 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-function AlertConfirmation({ children, stopInterview }) {
+
+function AlertConfirmation({children, stopInterview}) {
     return (
         <AlertDialog>
             <AlertDialogTrigger>{children}</AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                    <AlertDialogTitle>End Interview</AlertDialogTitle>
                     <AlertDialogDescription>
-                        This action cannot be undone. Your interview will end.
+                        Are you sure? This action cannot be undone. Your interview will end.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -27,7 +28,6 @@ function AlertConfirmation({ children, stopInterview }) {
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
-
     )
 }
 

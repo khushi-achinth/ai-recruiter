@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 
-function TimerComponent({ start }) {
+function TimerComponent({start}) {
     const [time, setTime] = useState(0);
     const [running, setRunning] = useState(start);
 

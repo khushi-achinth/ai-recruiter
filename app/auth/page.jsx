@@ -7,12 +7,12 @@ import {supabase} from "@/services/supabaseClient";
 
 const Login = () => {
 
-    const signInWithGoogle = async() => {
+    const signInWithGoogle = async () => {
         const {error} = await supabase.auth.signInWithOAuth({
             provider: "google",
         });
         if (error) {
-            console.error('Error:', error.message);
+            console.error(error);
         }
     }
 
@@ -39,7 +39,7 @@ const Login = () => {
                     <h2 className={'text-2xl font-bold text-center'}>Welcome to AI-Recruiter</h2>
                     <h4 className={'text-xl text-blue-500 text-center'}>Automate your recruitment</h4>
                     <Button onClick={signInWithGoogle}
-                        className={'mt-7 w-full cursor-pointer'}
+                            className={'mt-7 w-full cursor-pointer'}
                     >Sign In With Google</Button>
                 </div>
             </div>

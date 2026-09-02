@@ -1,6 +1,6 @@
 import React from 'react'
 
-function QuestionListContainer({ questionList }) {
+function QuestionListContainer({questionList}) {
     return (
         <div>
             <h2 className='font-bold text-lg mb-5'>Generated Interview Questions:</h2>
