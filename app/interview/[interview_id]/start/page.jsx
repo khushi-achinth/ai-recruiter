@@ -23,7 +23,7 @@ function StartInterview() {
     const [callEnd, setCallEnd] = useState(false);
 
     useEffect(() => {
-        //interviewInfo && startCall();
+        interviewInfo && startCall();
     }, [interviewInfo])
 
     const startCall = () => {

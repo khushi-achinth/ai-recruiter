@@ -46,7 +46,7 @@ function FormContainer({onHandleInputChange, GoToNext}) {
                 <h2 className='text-sm font-medium'>Interview Duration</h2>
                 <Select onValueChange={(value) => onHandleInputChange('duration', value)}>
                     <SelectTrigger className="w-full mt-2">
-                        <SelectValue placeholder="Select Duration"/>
+                        <SelectValue placeholder="Select duration"/>
                     </SelectTrigger>
                     <SelectContent>
                         <SelectItem value="5 Mins">5 Minutes</SelectItem>
