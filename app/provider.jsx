@@ -28,8 +28,9 @@ const Provider = ({children}) => {
                             picture: user?.user_metadata?.picture,
                             credits: process.env.NEXT_PUBLIC_FREE_CREDITS
                         },
-                    ]);
-                setUser(data)
+                    ])
+                    .select('*');
+                setUser(data[0])
                 return;
             }
             setUser(users[0]);

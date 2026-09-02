@@ -19,8 +19,6 @@ export default function Home() {
             // Perform a hard reload of the current window URL
             window.location.href = window.location.pathname;
         }
-
-        console.log("ACHINTH:" + user)
         if (user) {
             redirect('/dashboard');
         }

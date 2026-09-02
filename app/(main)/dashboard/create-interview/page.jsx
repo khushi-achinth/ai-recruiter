@@ -26,7 +26,6 @@ function CreateInterview() {
     }
 
     const onGoToNext = () => {
-        console.log(user?.credits)
         if (user?.credits <= 0) {
             toast.error("Please add credits", {position: "top-center"})
             return
