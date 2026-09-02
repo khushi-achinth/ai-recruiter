@@ -92,7 +92,8 @@ Depending on this interview conversation between assistant and candidate,
 Give me feedback of the user interview. Give me rating out of 10 for technical skills, 
 communication, problem solving and experience. Also give me summery in about 5 lines 
 about the interview and one line to let me know whether candidate is recommended 
-for hire or not with message. Give me response in JSON format
+for hire or not with message. The total rating must be out of 10 based on overall performance of the candidate in the interview.
+Give me response in JSON format
 {
     feedback:{
         rating:{

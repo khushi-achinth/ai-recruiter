@@ -19,8 +19,17 @@ function InterviewDetailsContainer({interviewDetails}) {
                 </div>
                 {interviewDetails?.type && <div>
                     <h2 className='text-sm text-gray-500'>Type</h2>
-                    <h2 className='flex text-sm font-bold items-center gap-2'><ClipboardType
-                        className='h-4 w-4'/> {JSON.parse(interviewDetails?.type)[0]} </h2>
+                    <div className='flex flex-col gap-1'>
+                        {JSON.parse(interviewDetails?.type || '[]').map((type, index) => (
+                            <h2
+                                key={index}
+                                className='flex text-sm font-bold items-center gap-2'
+                            >
+                                <ClipboardType className='h-4 w-4' />
+                                {type}
+                            </h2>
+                        ))}
+                    </div>
                 </div>}
             </div>
             <div className='mt-5'>
