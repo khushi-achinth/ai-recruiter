@@ -1,7 +1,7 @@
 "use client"
 
 import {InterviewDataContext} from '@/context/InterviewDataContext'
-import {Loader2Icon, Phone, Timer} from 'lucide-react';
+import {Loader2Icon, PhoneOff, Timer} from 'lucide-react';
 import Image from 'next/image';
 import React, {useContext, useEffect, useMemo, useState} from 'react'
 import Vapi from "@vapi-ai/web";
@@ -23,7 +23,7 @@ function StartInterview() {
     const [callEnd, setCallEnd] = useState(false);
 
     useEffect(() => {
-        interviewInfo && startCall();
+        //interviewInfo && startCall();
     }, [interviewInfo])
 
     const startCall = () => {
@@ -178,16 +178,13 @@ Key Guidelines:
                 </div>
             </div>
             <div className='flex items-center gap-5 justify-center mt-7'>
-                {/*<Mic className='h-12 w-12 p-3 bg-gray-500 text-white rounded-full cursor-pointer' />*/}
                 <AlertConfirmation stopInterview={() => {
                     stopInterview()
                 }}>
-                    {!loading ? <Phone className='h-12 w-12 p-3 bg-red-500 text-white rounded-full cursor-pointer'
+                    {!loading ? <PhoneOff className='h-15 w-15 p-4 bg-red-500 text-white rounded-2xl cursor-pointer'
                     /> : <Loader2Icon className='animate-spin'/>}
                 </AlertConfirmation>
-
             </div>
-            <h2 className='text-sm text-gray-400 text-center mt-5'>Interview in Progress...</h2>
         </div>
     )
 }

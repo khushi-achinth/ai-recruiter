@@ -29,8 +29,8 @@ function InterviewCard({interview, viewDetail = false}) {
                         Link</Button>
                 </div>
                 :
-                <Link href={`/scheduled-interviews/` + interview?.interview_id + `/details`}>
-                    <Button className="mt-5 w-full" variant="outline">View Detail <ArrowRight/> </Button>
+                <Link href={`/interview-results/` + interview?.interview_id + `/details`}>
+                    <Button className="mt-5 w-full" variant="outline">View Results<ArrowRight/> </Button>
                 </Link>
             }
         </div>

@@ -1,4 +1,4 @@
-import {Calendar, List, Phone} from 'lucide-react'
+import {List, NotebookPen, Phone} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -10,21 +10,21 @@ function DashboardOptions() {
             >
                 <Phone className='p-3 text-primary bg-blue-50 rounded-lg h-12 w-12'/>
                 <h2 className='font-bold'>Create New Interview</h2>
-                <p className='text-gray-500'>Create AI Interviews and schedule then with Candidates</p>
+                <p className='text-gray-500'>Create AI Interviews to share with candidates</p>
             </Link>
-            <Link href={'/scheduled-interviews'}
+            <Link href={'/interview-results'}
                   className='bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-2 cursor-pointer'
             >
-                <Calendar className='p-3 text-primary bg-blue-50 rounded-lg h-12 w-12'/>
-                <h2 className='font-bold'>Scheduled Interviews</h2>
-                <p className='text-gray-500'>View the forthcoming interview schedule</p>
+                <NotebookPen className='p-3 text-primary bg-blue-50 rounded-lg h-12 w-12'/>
+                <h2 className='font-bold'>Interview Results</h2>
+                <p className='text-gray-500'>View the AI feedback reports of completed interviews</p>
             </Link>
-            <Link href={'/scheduled-interviews'}
+            <Link href={'/all-interviews'}
                   className='bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-2 cursor-pointer'
             >
                 <List className='p-3 text-primary bg-blue-50 rounded-lg h-12 w-12'/>
                 <h2 className='font-bold'>All Interviews</h2>
-                <p className='text-gray-500'>View all interviews created by you</p>
+                <p className='text-gray-500'>View all interviews that you have previously created</p>
             </Link>
         </div>
     )

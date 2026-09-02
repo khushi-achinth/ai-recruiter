@@ -1,11 +1,11 @@
 import {
     BriefcaseBusinessIcon,
-    Calendar,
     Code2Icon,
     Component,
     LayoutDashboard,
     List,
     LogOut,
+    NotebookPen,
     Puzzle,
     User2Icon,
     WalletCards
@@ -18,9 +18,9 @@ export const SideBarOptions = [
         path: '/dashboard'
     },
     {
-        name: 'Scheduled Interviews',
-        icon: Calendar,
-        path: '/scheduled-interviews'
+        name: 'Interview Results',
+        icon: NotebookPen,
+        path: '/interview-results'
     },
     {
         name: 'All Interviews',

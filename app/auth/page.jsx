@@ -18,7 +18,7 @@ const Login = () => {
 
     return (
         <div className={'flex flex-col items-center justify-center h-screen'}>
-            <div className={'flex flex-col items-center border rounded-2xl p-8'}>
+            <div className={'flex flex-col items-center border-2 rounded-2xl p-8'}>
                 <Image
                     src={'/logo.png'}
                     alt={'logo'}
@@ -36,8 +36,8 @@ const Login = () => {
                         className={'w-100 h-62.5 rounded-2xl'}
                         loading={'eager'}
                     />
-                    <h2 className={'text-2xl font-bold text-center'}>Welcome to AI-Recruiter</h2>
-                    <h4 className={'text-xl text-blue-500 text-center'}>Automate your recruitment</h4>
+                    <h2 className={'text-2xl font-bold text-center mt-4'}>Welcome to AI-Recruiter</h2>
+                    <h4 className={'text-xl text-gray-900 text-center'}>Automate your recruitment</h4>
                     <Button onClick={signInWithGoogle}
                             className={'mt-7 w-full cursor-pointer'}
                     >Sign In With Google</Button>

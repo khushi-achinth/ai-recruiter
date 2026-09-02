@@ -1,7 +1,7 @@
 "use client"
 
 import {Button} from "@/components/ui/button";
-import {BarChart3, Clock, Users} from "lucide-react";
+import {Clock, Users} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {useUser} from "./provider";
@@ -12,17 +12,19 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 export default function Home() {
     const {user} = useUser();
     const searchParams = useSearchParams();
-    const reloadFlag = searchParams.get('signOut');
+    const signOut = searchParams.get('signOut');
 
     useEffect(() => {
-        if (reloadFlag === 'true') {
+        if (signOut === 'true') {
             // Perform a hard reload of the current window URL
             window.location.href = window.location.pathname;
         }
+
+        console.log("ACHINTH:" + user)
         if (user) {
             redirect('/dashboard');
         }
-    }, [reloadFlag, user]);
+    }, [signOut, user]);
 
     return (
         <div>
@@ -87,7 +89,7 @@ export default function Home() {
                                 </p>
                             </div>
                         </div>
-                        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 md:gap-8 mt-12">
+                        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 mt-12">
                             <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
                                 <Clock className="h-12 w-12 text-primary"/>
                                 <h3 className="text-xl font-bold">Save Time</h3>
@@ -96,17 +98,10 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
-                                <BarChart3 className="h-12 w-12 text-primary"/>
-                                <h3 className="text-xl font-bold">Data-Driven Insights</h3>
-                                <p className="text-center text-gray-500">
-                                    Get detailed analytics and candidate comparisons based on interview responses.
-                                </p>
-                            </div>
-                            <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
                                 <Users className="h-12 w-12 text-primary"/>
                                 <h3 className="text-xl font-bold">Reduce Bias</h3>
                                 <p className="text-center text-gray-500">
-                                    Standardized interviews help eliminate unconscious bias in the hiring process.
+                                    Standardised interviews help eliminate unconscious bias in the hiring process.
                                 </p>
                             </div>
                         </div>
@@ -131,7 +126,7 @@ export default function Home() {
                                 </div>
                                 <h3 className="text-xl font-bold">Create Interview</h3>
                                 <p className="text-center text-gray-500">
-                                    Set up your job requirements and customize interview questions.
+                                    Set up your job requirements and generate interview questions.
                                 </p>
                             </div>
                             <div className="flex flex-col items-center space-y-4">
@@ -151,7 +146,7 @@ export default function Home() {
                                 </div>
                                 <h3 className="text-xl font-bold">Review Results</h3>
                                 <p className="text-center text-gray-500">
-                                    Get AI-analyzed results, transcripts, and candidate comparisons.
+                                    Get AI analyzed results to help filter out candidates.
                                 </p>
                             </div>
                         </div>
@@ -163,7 +158,7 @@ export default function Home() {
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Pricing</h2>
                                 <p className="mx-auto max-w-175 text-gray-500 md:text-xl/relaxed">
-                                    Pay as you go
+                                    Buy credits as per your requirements.
                                 </p>
                             </div>
                         </div>
@@ -233,9 +228,7 @@ export default function Home() {
             <footer className="border-t flex items-center justify-center bg-gray-50">
                 <div
                     className="container flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-12">
-                    <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold">AI-Recruiter</span>
-                    </div>
+                    <div className="text-sm text-gray-500">© 2026 AI-Recruiter. All rights reserved.</div>
                     <nav className="flex flex-wrap gap-4 md:gap-6">
                         <Link href="#" className="text-sm hover:underline">
                             Terms
@@ -247,7 +240,6 @@ export default function Home() {
                             Contact
                         </Link>
                     </nav>
-                    <div className="text-sm text-gray-500">© 2026 AI-Recruiter. All rights reserved.</div>
                 </div>
             </footer>
         </div>

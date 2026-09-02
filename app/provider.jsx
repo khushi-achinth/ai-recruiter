@@ -5,7 +5,6 @@ import {supabase} from "@/services/supabaseClient";
 import {UserDetailContext} from "@/context/UserDetailContext";
 
 const Provider = ({children}) => {
-
     const [user, setUser] = useState();
 
     useEffect(() => {

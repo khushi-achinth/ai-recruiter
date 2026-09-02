@@ -5,7 +5,7 @@ import {Button} from '@/components/ui/button';
 import {supabase} from '@/services/supabaseClient';
 import {Video} from 'lucide-react';
 import React, {useEffect, useState} from 'react'
-import InterviewCard from '@/app/(main)/dashboard/_components/InterviewCard';
+import InterviewCard from '@/app/(main)/_components/InterviewCard';
 import Link from 'next/link';
 
 function LatestInterviewsList() {

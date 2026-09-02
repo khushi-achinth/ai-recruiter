@@ -31,52 +31,51 @@ function CandidateFeedbackDialog({candidate}) {
                                     </div>
                                 </div>
                                 <div className='flex gap-3 items-center'>
-                                    <h2 className='text-primary text-2xl font-bold'>{feedback?.rating?.totalRating}/10</h2>
+                                    <h2 className='text-primary text-2xl font-bold'>{candidate?.feedback?.rating?.totalRating}/10</h2>
                                 </div>
                             </div>
                             <div className='mt-5'>
-                                <h2 className='font-bold'>Skills Assesment</h2>
+                                <h2 className='font-bold'>Skills Assessment</h2>
                                 <div className='mt-3 grid grid-cols-2 gap-5'>
                                     <div>
                                         <h2 className='flex justify-between'>Technical
-                                            Skills <span>{feedback?.rating?.technicalSkills}/10</span></h2>
-                                        <Progress value={feedback?.rating?.technicalSkills * 10} className='mt-1'/>
+                                            Skills <span>{candidate?.feedback?.rating?.technicalSkills}/10</span></h2>
+                                        <Progress value={candidate?.feedback?.rating?.technicalSkills * 10}
+                                                  className='mt-1'/>
                                     </div>
                                     <div>
-                                        <h2 className='flex justify-between'>Communication<span>{feedback?.rating?.communication}/10</span>
+                                        <h2 className='flex justify-between'>Communication<span>{candidate?.feedback?.rating?.communication}/10</span>
                                         </h2>
-                                        <Progress value={feedback?.rating?.communication * 10} className='mt-1'/>
+                                        <Progress value={candidate?.feedback?.rating?.communication * 10}
+                                                  className='mt-1'/>
                                     </div>
                                     <div>
                                         <h2 className='flex justify-between'>Problem
-                                            Solving <span>{feedback?.rating?.problemSolving}/10</span></h2>
-                                        <Progress value={feedback?.rating?.problemSolving * 10} className='mt-1'/>
+                                            Solving <span>{candidate?.feedback?.rating?.problemSolving}/10</span></h2>
+                                        <Progress value={candidate?.feedback?.rating?.problemSolving * 10}
+                                                  className='mt-1'/>
                                     </div>
                                     <div>
-                                        <h2 className='flex justify-between'>Experince <span>{feedback?.rating?.experience}/10</span>
+                                        <h2 className='flex justify-between'>Experience <span>{candidate?.feedback?.rating?.experience}/10</span>
                                         </h2>
-                                        <Progress value={feedback?.rating?.experience * 10} className='mt-1'/>
+                                        <Progress value={candidate?.feedback?.rating?.experience * 10}
+                                                  className='mt-1'/>
                                     </div>
                                 </div>
                             </div>
                             <div className='mt-5'>
-                                <h2 className='font-bold'>Performance Summery</h2>
+                                <h2 className='font-bold'>Performance Summary</h2>
                                 <div className='p-5 bg-secondary my-3 rounded-md'>
-                                    {feedback?.summery?.map((summery, index) => (
-                                        <p key={index}>{summery}</p>
-                                    ))}
+                                    <p>{candidate?.feedback?.summary}</p>
                                 </div>
                             </div>
                             <div
-                                className={`p-5 mt-10 flex items-center justify-between rounded-md ${feedback?.recommendation === false ? 'bg-red-100' : 'bg-green-100'} `}>
+                                className={`p-5 mt-10 flex items-center justify-between rounded-md ${candidate?.feedback?.recommended === false ? 'bg-red-100' : 'bg-green-100'} `}>
                                 <div>
-                                    <h2 className={`font-bold ${feedback?.recommendation === false ? 'text-red-700' : 'text-green-700'}`}>Recommendation
-                                        Msg:</h2>
-                                    <p className={`${feedback?.recommendation === false ? 'text-red-500' : 'text-green-500'}`}>{feedback?.recommendationMsg}</p>
+                                    <h2 className={`font-bold ${candidate?.feedback?.recommended === false ? 'text-red-700' : 'text-green-700'}`}>Verdict
+                                        :</h2>
+                                    <p className={`${candidate?.feedback?.recommended === false ? 'text-red-700' : 'text-green-700'}`}>{candidate?.feedback?.recommendationMsg}</p>
                                 </div>
-                                <Button
-                                    className={`${feedback?.recommendation === false ? 'bg-red-700' : 'bg-green-700'} `}>Send
-                                    Msg</Button>
                             </div>
                         </div>
                     </DialogDescription>

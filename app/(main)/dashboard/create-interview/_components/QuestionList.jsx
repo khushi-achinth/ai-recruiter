@@ -84,8 +84,6 @@ function QuestionList({formData, onCreateLink}) {
                     </div>
                 </div>
             }
-
-
         </div>
     )
 }

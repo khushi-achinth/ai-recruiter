@@ -5,7 +5,7 @@ import {Button} from '@/components/ui/button';
 import {supabase} from '@/services/supabaseClient';
 import {Video} from 'lucide-react';
 import React, {useEffect, useState} from 'react'
-import InterviewCard from '../dashboard/_components/InterviewCard';
+import InterviewCard from '../_components/InterviewCard';
 
 function AllInterviews() {
     const [interviewList, setInterviewList] = useState([]);

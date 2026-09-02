@@ -29,7 +29,6 @@ function InterviewLink({interview_id, numOfQuestions, formData}) {
             </div>
             <h2 className='font-bold text-lg mt-4'>Your AI Interview is Ready!</h2>
             <p className='mt-3'>Share this link with your candidates to start the interview process</p>
-
             <div className='w-full p-7 mt-6 rounded-lg bg-white'>
                 <div className='flex justify-between items-center'>
                     <h2 className='font-bold'>Interview Link</h2>
@@ -40,27 +39,13 @@ function InterviewLink({interview_id, numOfQuestions, formData}) {
                     <Button onClick={() => onCopyLink()}> <Copy/> Copy Link </Button>
                 </div>
                 <hr className='my-5'/>
-
                 <div className='flex gap-5'>
                     <h2 className='text-sm text-gray-500 flex gap-2 items-center'><Clock
                         className='h-4 w-4'/>{formData?.duration} </h2>
                     <h2 className='text-sm text-gray-500 flex gap-2 items-center'><List
                         className='h-4 w-4'/> {numOfQuestions} Questions </h2>
-                    {/* <h2 className='text-sm text-gray-500 flex gap-2 items-center'><Calendar className='h-4 w-4' /> 30 Min {formData?.duration} </h2> */}
-
                 </div>
             </div>
-            {/*
-            <div className='mt-7 bg-white p-5 rounded-lg w-full'>
-                <h2 className='font-bold'>Share Via</h2>
-                <div className='flex gap-7 mt-2 justify-around'>
-                    <Button variant={'outline'} className=''> <Mail /> Slack </Button>
-                    <Button variant={'outline'} className=''> <Mail /> Email </Button>
-                    <Button variant={'outline'} className=''> <Mail /> Whatsapp </Button>
-
-                </div>
-            </div>
-            */}
             <div className='flex w-full gap-5 justify-between mt-6'>
                 <Link href={'/dashboard'}>
                     <Button variant={'outline'}> <ArrowLeft/> Back to Dashboard </Button>
@@ -68,7 +53,6 @@ function InterviewLink({interview_id, numOfQuestions, formData}) {
                 <Link href={'/dashboard/create-interview'}>
                     <Button> <Plus/> Create New Interview </Button>
                 </Link>
-
             </div>
         </div>
     )

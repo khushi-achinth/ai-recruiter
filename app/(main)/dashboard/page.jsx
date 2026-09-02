@@ -1,6 +1,6 @@
 import React from 'react';
-import DashboardOptions from "../_components/DashboardOptions";
-import LatestInterviewList from "../_components/LatestInterviewList";
+import DashboardOptions from "./_components/DashboardOptions";
+import LatestInterviewList from "./_components/LatestInterviewList";
 
 const Dashboard = () => {
     return (

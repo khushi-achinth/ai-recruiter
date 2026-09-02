@@ -1,12 +1,13 @@
 "use client"
+
 import {useUser} from '@/app/provider';
 import {Button} from '@/components/ui/button';
 import {supabase} from '@/services/supabaseClient'
 import {Video} from 'lucide-react';
 import React, {useEffect, useState} from 'react'
-import InterviewCard from '../dashboard/_components/InterviewCard';
+import InterviewCard from '../_components/InterviewCard';
 
-function ScheduledInterviews() {
+function InterviewResults() {
     const {user} = useUser();
     const [interviewList, setInterviewList] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -27,7 +28,7 @@ function ScheduledInterviews() {
 
     return (
         <div className=' mt-5'>
-            <h2 className='font-bold text-2xl'>Interview List with Candidate Feedback</h2>
+            <h2 className='font-bold text-2xl'>Interviews with Candidate Results</h2>
             {!loading &&
                 interviewList?.length === 0 &&
                 <div className='p-5 flex flex-col gap-3 items-center bg-white rounded-xl mt-5 '>
@@ -37,15 +38,16 @@ function ScheduledInterviews() {
                 </div>}
             {!loading && interviewList &&
                 <div className='grid grid-cols-2 mt-5 xl:grid-cols-3 gap-5'>
-                    {interviewList && interviewList?.map((interview, index) => (
-                        <InterviewCard interview={interview} key={index}
-                                       viewDetail={true}
-                        />
-                    ))}
+                    {interviewList && interviewList?.map((interview, index) => {
+                        return interview.InterviewFeedback.length !== 0 &&
+                            <InterviewCard interview={interview} key={index}
+                                           viewDetail={true}
+                            />
+                    })}
                 </div>
             }
         </div>
     )
 }
 
-export default ScheduledInterviews
+export default InterviewResults
