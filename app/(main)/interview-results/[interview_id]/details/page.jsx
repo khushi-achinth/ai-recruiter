@@ -5,11 +5,11 @@ import {useUser} from '@/app/provider';
 import {supabase} from '@/services/supabaseClient';
 import {useParams, useRouter} from 'next/navigation'
 import React, {useEffect, useState} from 'react'
-import InterviewDetailsContainer from './_components/InterviewDetailsContainer';
 import {Button} from '@/components/ui/button'
 import CandidateList from "@/app/(main)/interview-results/[interview_id]/details/_components/CandidateList";
+import InterviewDetails from "@/app/(main)/interview-results/[interview_id]/details/_components/InterviewDetails";
 
-function InterviewResultDetails() {
+function InterviewResultS() {
     const router = useRouter()
     const {interview_id} = useParams();
     const [loading, setLoading] = useState(true);
@@ -17,10 +17,10 @@ function InterviewResultDetails() {
     const [interviewDetails, setInterviewDetails] = useState();
 
     useEffect(() => {
-        user && GetInterviewDetail();
+        user && GetInterviewDetails();
     }, [user])
 
-    const GetInterviewDetail = async () => {
+    const GetInterviewDetails = async () => {
         const result = await supabase.from('Interviews')
             .select(`jobPosition,jobDescription,type,questionList,duration,interview_id,created_at,
                 InterviewFeedback(userEmail,userName,feedback,created_at)`)
@@ -35,7 +35,7 @@ function InterviewResultDetails() {
         <div>
             {!loading && <div className='mt-5'>
                 <h2 className='font-bold text-2xl'>Interview Details</h2>
-                <InterviewDetailsContainer interviewDetails={interviewDetails}/>
+                <InterviewDetails interviewDetails={interviewDetails}/>
                 <CandidateList candidateList={interviewDetails?.['InterviewFeedback']}/>
             </div>}
             {!loading &&
@@ -46,4 +46,4 @@ function InterviewResultDetails() {
     )
 }
 
-export default InterviewResultDetails
+export default InterviewResultS

@@ -1,6 +1,6 @@
 import {Button} from '@/components/ui/button';
 import axios from 'axios';
-import {Loader2, Loader2Icon} from 'lucide-react';
+import {ArrowRight, Loader2, Loader2Icon} from 'lucide-react';
 import React, {useEffect, useState} from 'react'
 import {toast} from 'sonner';
 import QuestionListContainer from './QuestionListContainer';
@@ -80,7 +80,7 @@ function QuestionList({formData, onCreateLink}) {
                     <div className='flex justify-end mt-10'>
                         <Button onClick={() => onFinish()} disabled={saveLoading}>
                             {saveLoading && <Loader2 className='animate-spin'/>}
-                            Create Interview Link & Finish</Button>
+                            Create Interview Link & Finish<ArrowRight/></Button>
                     </div>
                 </div>
             }

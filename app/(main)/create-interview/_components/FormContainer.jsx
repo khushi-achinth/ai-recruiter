@@ -75,7 +75,7 @@ function FormContainer({onHandleInputChange, GoToNext}) {
                 </div>
             </div>
             <div className='mt-7 flex justify-end'>
-                <Button onClick={() => GoToNext()}>Generate Question <ArrowRight/></Button>
+                <Button onClick={() => GoToNext()}>Generate Questions<ArrowRight/></Button>
             </div>
         </div>
     )

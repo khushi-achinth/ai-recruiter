@@ -1,11 +1,13 @@
-import {Calendar, ClipboardType, Clock} from 'lucide-react'
+import {Calendar, ClipboardType, Clock, User} from 'lucide-react'
 import moment from 'moment'
 import React from 'react'
 
-function InterviewDetailsContainer({interviewDetails}) {
+function InterviewDetails({interviewDetails}) {
     return (
         <div className='p-5 bg-white rounded-lg mt-5'>
-            <h2>{interviewDetails?.jobPosition}</h2>
+            <h2 className='text-sm text-gray-500'>Job Position</h2>
+            <h2 className='flex text-sm font-bold items-center gap-2'><User
+                className='h-4 w-4'/> {interviewDetails?.jobPosition}</h2>
             <div className='mt-4 flex items-center justify-between lg:pr-52'>
                 <div>
                     <h2 className='text-sm text-gray-500'>Duration</h2>
@@ -34,7 +36,8 @@ function InterviewDetailsContainer({interviewDetails}) {
             </div>
             <div className='mt-5'>
                 <h2 className='font-bold'>Job Description</h2>
-                <p className='text-sm leading-6'>{interviewDetails?.jobDescription}</p>
+                <p className='text-sm leading-6'>{interviewDetails?.jobDescription}
+                </p>
             </div>
             <div className='mt-5'>
                 <h2 className='font-bold'>Interview Questions</h2>
@@ -48,4 +51,4 @@ function InterviewDetailsContainer({interviewDetails}) {
     )
 }
 
-export default InterviewDetailsContainer
+export default InterviewDetails

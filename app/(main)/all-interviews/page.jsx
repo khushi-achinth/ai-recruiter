@@ -25,11 +25,10 @@ function AllInterviews() {
         setInterviewList(Interviews);
         setLoading(false);
     }
-    
+
     return (
         <div className='my-5'>
             <h2 className='font-bold text-2xl'>All Previously Created Interviews</h2>
-
             {!loading &&
                 interviewList?.length === 0 &&
                 <div className='p-5 flex flex-col gap-3 items-center bg-white rounded-xl mt-5 '>
